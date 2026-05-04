@@ -1,0 +1,48 @@
+{
+  "mcpServers": {
+    "API Specification": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "apidog-mcp-server@latest",
+        "--project=YOUR_APIDOG_PROJECT_ID"
+      ],
+      "env": {
+        "APIDOG_ACCESS_TOKEN": "${APIDOG_ACCESS_TOKEN}"
+      }
+    },
+    "figma": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@figma/mcp-server",
+        "--file-key=YOUR_FIGMA_FILE_KEY"
+      ],
+      "env": {
+        "FIGMA_ACCESS_TOKEN": "${FIGMA_ACCESS_TOKEN}"
+      }
+    },
+    "github": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-github"
+      ],
+      "env": {
+        "GITHUB_TOKEN": "${GITHUB_TOKEN}"
+      }
+    },
+    "trello": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@delorenj/mcp-server-trello"
+      ],
+      "env": {
+        "TRELLO_API_KEY": "${TRELLO_API_KEY}",
+        "TRELLO_TOKEN": "${TRELLO_TOKEN}",
+        "TRELLO_BOARD_ID": "YOUR_TRELLO_BOARD_ID"
+      }
+    }
+  }
+}

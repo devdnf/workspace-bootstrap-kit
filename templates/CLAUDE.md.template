@@ -1,0 +1,70 @@
+# {{PROJECT_NAME}} — Claude Code Workspace
+
+Read {{PROJECT_CONTEXT_FILE}} before responding to any message.
+The project context is the single source of truth.
+
+---
+
+## Workspace structure
+
+| Repository | Purpose |
+|---|---|
+| {{WORKSPACE_ROOT_REPO}} | Workspace root — specs, constitution, docs |
+| {{REPO_2}} | {{REPO_2_PURPOSE}} |
+| {{REPO_3}} | {{REPO_3_PURPOSE}} |
+
+## How to commit
+
+**Shared artifacts (specs, constitution, docs):**
+```bash
+git add . && git commit -m "..." && git push
+# Run from workspace root
+```
+
+**Per-repository changes:**
+```bash
+cd {{SUB_REPO}} && git add . && git commit -m "..." && git push
+```
+
+## MCP servers active in this project
+
+| Server | Purpose |
+|---|---|
+| "API Specification" | Apidog — endpoint specs and shareable URLs |
+| "figma" | Figma — design inspection and token extraction |
+| "github" | GitHub — repository and PR operations |
+| "trello" | Trello — task card creation and management |
+
+## Developer setup
+
+Required environment variables (add to ~/.zshrc):
+```bash
+export APIDOG_ACCESS_TOKEN="..."
+export FIGMA_ACCESS_TOKEN="..."
+export GITHUB_TOKEN="..."
+export TRELLO_API_KEY="..."
+export TRELLO_TOKEN="..."
+```
+
+After setting: `source ~/.zshrc` then restart Claude Code.
+
+Full setup guide: https://github.com/{{GITHUB_OWNER}}/workspace-bootstrap-kit
+
+## Spec-driven loop
+
+Every feature:
+  1. /speckit.specify → /speckit.clarify → /speckit.plan → /speckit.tasks
+  2. Apidog: create new endpoints, retrieve shareable URLs
+  3. Trello: create cards in Backlog with Apidog/Figma links and labels
+  4. /speckit.implement
+
+Never implement without a spec, plan, Apidog endpoints, and Trello cards.
+
+## Project-specific IDs
+
+| Tool | ID |
+|---|---|
+| Apidog Project ID | {{APIDOG_PROJECT_ID}} |
+| Figma File Key | {{FIGMA_FILE_KEY}} |
+| Trello Board ID | {{TRELLO_BOARD_ID}} |
+| GitHub Repo(s) | {{GITHUB_REPOS}} |
